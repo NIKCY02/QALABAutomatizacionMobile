@@ -29,6 +29,6 @@ public class Stepdefs {
 
     @Then("valido el carrito de compra actualice correctamente")
     public void validoElCarritoDeCompraActualiceCorrectamente() {
-       // carritoStep;
+         carritoStep.setValidacionCarrito();
     }
 }

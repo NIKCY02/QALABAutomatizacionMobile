@@ -20,8 +20,8 @@ public class AddProductsScreen extends PageObject {
     public void clickSelectorMas(){
         selectormas.click();
     }
-    public void obtenerCantidad(){
-        Cantidad.getText();
+    public int obtenerCantidad(){
+        return Integer.parseInt(Cantidad.getText());
     }
     public void clickAddCart(){
         AddCart.click();

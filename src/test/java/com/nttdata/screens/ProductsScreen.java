@@ -10,14 +10,12 @@ public class ProductsScreen extends PageObject {
     private WebElement title;
     @AndroidFindBy(xpath = "//android.widget.TextView[@resource-id=\"com.saucelabs.mydemoapp.android:id/productTV\"]")
     private WebElement products;
-    @AndroidFindBy(accessibility = "Sauce Labs Backpack")
+    @AndroidFindBy(xpath = "//android.widget.ImageView[@content-desc=\"Sauce Labs Backpack\"]")
     private WebElement productBackpack;
-    @AndroidFindBy(accessibility = "Sauce Labs Bike Light")
+    @AndroidFindBy(xpath = "//android.widget.ImageView[@content-desc=\"Sauce Labs Bike Light\"]")
     private WebElement productBike;
-    @AndroidFindBy(accessibility = "Sauce Labs Bolt T-Shirt")
+    @AndroidFindBy(xpath = "//android.widget.ImageView[@content-desc=\"Sauce Labs Bolt T-Shirt\"]")
     private WebElement productBolt;
-    @AndroidFindBy(xpath = "//android.widget.TextView[@resource-id=\"com.saucelabs.mydemoapp.android:id/cartTV\"]")
-    private WebElement validacionCarrito;
     @AndroidFindBy (accessibility = "View menu")
     private WebElement menu;
     @AndroidFindBy(xpath = "//android.widget.TextView[@resource-id=\"com.saucelabs.mydemoapp.android:id/itemTV\" and @text=\"Catalog\"]")
@@ -35,24 +33,17 @@ public class ProductsScreen extends PageObject {
         switch (producto){
             case "Sauce Labs Backpack":
                 productBackpack.click();
-
+                break;
+            case "Sauce Labs Bike Light":
+                productBike.click();
+                break;
+            case "Sauce Labs Bolt-T-Shirt":
+                productBolt.click();
+                break;
+            default:
+                System.out.println("Producto no contemplado");
+                throw new RuntimeException("El test se detuvo porque el producto no está contemplado");
         }
-        /*if(productBackpack.isSelected()){
-            System.out.println("Selecciono el producto Sauce Labs Backpack");
-        } else if(productBike.isSelected()){
-            System.out.println("Selecciono producto Bike");
-        } else if(productBolt.isSelected()){
-            System.out.println("Selecciono producto Bolt");
-        } else {
-            menu.click();
-            catalog.click();
-            System.out.println("Seleccione otro producto");
-        }*/
-    }
-
-    public boolean setValidacionCarrito() {
-        waitFor(ExpectedConditions.visibilityOf(validacionCarrito));
-        return validacionCarrito.isDisplayed();
     }
 
     /*public void clickMenu(){

@@ -12,5 +12,5 @@ Feature: Carrito de compras SauceLabs
     Examples:
       |PRODUCTO               |UNIDADES|
       |Sauce Labs Backpack    |1       |
-      #|Sauce Labs Bolt-T-Shirt|1       |
-      #|Sauce Labs Bike Light  |2       |
+      |Sauce Labs Bolt-T-Shirt|1       |
+      |Sauce Labs Bike Light  |2       |
